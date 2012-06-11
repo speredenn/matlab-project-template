@@ -34,7 +34,7 @@ rsync -a --delete --exclude 'releases' $ppath/ releases/$releasename
 ### If a release is required as a dependency ###
 
 if [ $# -eq 1 ]; then
-    rm -rf "$1"/$foldername "$1"/$releasename
+    rm -rf "$1"/"$foldername"*
     cp -R releases/$releasename "$1"
     ln -s $releasename "$1"/$foldername
 fi
