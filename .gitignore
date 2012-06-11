@@ -6,5 +6,6 @@ auto/
 
 # project generated outputs
 outputs/*
+deps/*
 releases/*
 VERSION
