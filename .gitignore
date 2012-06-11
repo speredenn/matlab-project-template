@@ -1,0 +1,10 @@
+# saves
+auto/
+*~
+\#*
+.\#*
+
+# project generated outputs
+outputs/*
+releases/*
+VERSION
