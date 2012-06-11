@@ -29,7 +29,7 @@ if [ ! -d releases/$releasename ]; then
     mkdir -p releases/$releasename
 fi
 
-rsync -a --exclude 'releases' $ppath/ releases/$releasename
+rsync -a --delete --exclude 'releases' $ppath/ releases/$releasename
 
 ### If a release is required as a dependency ###
 
