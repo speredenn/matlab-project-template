@@ -14,3 +14,5 @@ cd ../"$1"
 rm -rf .git/ init.sh generate.sh README.md
 touch README.md
 git init > /dev/null
+git add .
+git commit -m "init"
