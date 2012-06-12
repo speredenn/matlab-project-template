@@ -14,4 +14,5 @@ This is my folder skeleton for MathWorks MATLAB projects.
 ## TODO
  - change publish.sh in a makefile able to publish and to fetch the dependencies (make and make deps);
  - include in that make file the init.sh and the generate.sh scripts.
-
+ - update dependency technique with git include? would be great!
+ 
