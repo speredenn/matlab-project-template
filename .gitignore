@@ -4,8 +4,6 @@ auto/
 \#*
 .\#*
 
-# project generated outputs
+# project outputs
 outputs/*
-deps/*
-releases/*
-VERSION
+!outputs/.gitkeep
