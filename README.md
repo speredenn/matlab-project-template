@@ -2,17 +2,19 @@
 
 This is my folder skeleton for MathWorks MATLAB projects.
 
-## In order to use it
-	- git clone https://github.com/speredenn/matlab-project-template.git
-	- cd matlab-projet-template
-	- bash generate.sh your-project-name
-	- cd ../your-project-name # then... Happy hacking!
-
-## when code is ready
-	- bash publish.sh
+## Create a new project
+	- git clone https://github.com/speredenn/matlab-project-template.git [new-project-name]
+	- cd [new-project-name]
+	- make init
+	- OPTIONAL: git remote add origin [git-repo] (in that case, on the server, you need to create the repository with git init --bare)
+	- OPTIONAL, if dependencies: git submodule add -b master [git-repo-dependency] deps/[dependency-name]
+	- git push -u origin master
 	
-## TODO
- - change publish.sh in a makefile able to publish and to fetch the dependencies (make and make deps);
- - include in that make file the init.sh and the generate.sh scripts.
- - update dependency technique with git include? would be great!
- 
+## Upgrade the dependencies
+	- make upgrade-deps
+
+## when code is ready...
+	- make deploy
+
+## To run the code
+	- make
