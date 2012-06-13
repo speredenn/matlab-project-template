@@ -8,6 +8,13 @@ depfolders = $(shell mkdir -p deps; ls deps)
 all:
 	matlab -nodesktop -nodisplay -nosplash -r "run('./main.m')";
 
+init:
+	-rm -Rf .git README.md
+	touch README.md
+	git init
+	git add .
+	git commit -m "init"
+
 deploy:
 	-rm -Rf ../$(releasename)
 	git clone $(gitrepo) ../$(releasename)
