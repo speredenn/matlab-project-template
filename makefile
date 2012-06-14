@@ -3,7 +3,7 @@ ppath = $(shell pwd)
 foldername = $(shell basename $(ppath))
 releasename = $(foldername)-$(version)
 gitrepo = $(shell git config --get remote.origin.url)
-depfolders = $(shell mkdir -p deps; ls deps)
+
 
 all:
 	matlab -nodesktop -nodisplay -nosplash -r "run('./main.m')";
@@ -22,4 +22,4 @@ deploy:
 	cd ../$(releasename); git submodule update
 
 upgrade-deps:
-	git submodule update
+	git submodule foreach git pull origin master
