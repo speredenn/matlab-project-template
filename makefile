@@ -3,6 +3,8 @@ ppath = $(shell pwd)
 foldername = $(shell basename $(ppath))
 releasename = $(foldername)-$(version)
 gitrepo = $(shell git config --get remote.origin.url)
+location = $(shell if [ -z $(gitrepo) ]; then echo "$(ppath)"; else \
+echo "$(gitrepo)"; fi)
 
 
 all:
@@ -17,7 +19,7 @@ init:
 
 deploy:
 	-rm -Rf ../$(releasename)
-	git clone $(gitrepo) ../$(releasename)
+	git clone $(location) ../$(releasename)
 	cd ../$(releasename); git submodule init
 	cd ../$(releasename); git submodule update
 
